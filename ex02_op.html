@@ -1,0 +1,30 @@
+<DOCTYPE! html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 2</title>    
+</head>
+<body>
+
+    <p>Selecione os valores e a operação desejada:</p>
+    <form action="ex02_op.php" method="GET" name="operacao">   
+
+        a: <input type="text" name="a"> 
+        b: <input type="text" name="b"><br><br>
+
+        <input type="radio" name="operacao" value="s">
+        <label for="s">SOMA</label><br>
+
+        <input type="radio" name="operacao" value="-">
+        <label for="-">SUBTRAÇÃO</label><br>
+
+        <input type="radio" name="operacao" value="*">
+        <label for="*">MULTIPLICAÇÃO</label><br>
+
+        <input type="radio" name="operacao" value="/">
+        <label for="/">DIVISÃO</label><br><br>
+
+        <input type="submit" value="enviar"> 
+
+    </form>
+</body>
