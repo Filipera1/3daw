@@ -1,0 +1,50 @@
+<DOCTYPE! html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3</title>    
+</head>
+<body>
+
+    <p>Selecione os valores e a operação desejada:</p>
+    <form action="ex03_op.php" method="GET" name="operacao">   
+
+        a: <input type="text" name="a"> 
+        b: <input type="text" name="b"><br><br>
+
+        <input type="radio" name="operacao" value="+">
+        <label for="+">SOMA</label><br>
+
+        <input type="radio" name="operacao" value="-">
+        <label for="-">SUBTRAÇÃO</label><br>
+
+        <input type="radio" name="operacao" value="*">
+        <label for="*">MULTIPLICAÇÃO</label><br>
+
+        <input type="radio" name="operacao" value="/">
+        <label for="/">DIVISÃO</label><br>
+
+        <input type="radio" name="operacao" value="sqrt">
+        <label for="/">RAIZ QUADRADA</label><br>
+
+        <input type="radio" name="operacao" value="+-">
+        <label for="+-">+-</label><br>
+
+        <input type="radio" name="operacao" value="1/x">
+        <label for="1/x">1/x</label><br>
+
+        <input type="radio" name="operacao" value="cos">
+        <label for="cos">COS</label><br>
+
+        <input type="radio" name="operacao" value="sen">
+        <label for="sen">SEN</label><br>
+
+        <input type="radio" name="operacao" value="tan">
+        <label for="tan">TAN</label><br>
+        
+        <br>
+
+        <input type="submit" value="="> 
+
+    </form>
+</body>
