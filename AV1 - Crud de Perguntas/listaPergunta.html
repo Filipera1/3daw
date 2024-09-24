@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Opções de Listagem</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="incluirUsuario.php">Incluir usuario</a> |
+                <a href="incluirPergunta.php">Incluir pergunta</a> |
+                <a href="alterarPergunta.php">Alterar pergunta</a> |
+                <a href="excluirPergunta.php">Excluir pergunta</a> |
+                <a href="listaPergunta.html">Listar pergunta</a>
+            </nav>
+        </header>
+        <hr>
+
+        <h1>Escolha uma opção de listagem</h1>
+
+        <form action="listaPergunta.php" method="GET">
+            <button type="submit" name="opcao" value="todas">Listar todas as perguntas</button>
+        </form>
+        <br>
+        <form action="listaPergunta.php" method="GET">
+            <label for="numero">Numero da pergunta:</label>
+            <input type="text" name="numero">
+            <button type="submit" name="opcao" value="uma">Listar uma pergunta</button>
+        </form>
+    </body>
+</html>
