@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Opções de Listagem</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="ex05_incluirDisciplina.php">Incluir</a> |
+                <a href="ex05_alterarDisciplina.php">Alterar</a> |
+                <a href="ex05_excluirDisciplina.php">Excluir</a> |
+                <a href="ex05_listaDisciplina.html">Listar</a>
+            </nav>
+        </header>
+        <hr>
+
+        <h1>Escolha uma opção de listagem</h1>
+
+        <form action="ex05_listaDisciplina.php" method="GET">
+            <button type="submit" name="opcao" value="todas">Listar Todas as Disciplinas</button>
+        </form>
+        <br>
+        <form action="ex05_listaDisciplina.php" method="GET">
+            <label for="nome_disciplina">Nome da Disciplina:</label>
+            <input type="text" name="nome_disciplina">
+            <button type="submit" name="opcao" value="uma">Listar Uma Disciplina</button>
+        </form>
+    </body>
+</html>
