@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Opções de Listagem</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="incluirAluno.php">Incluir aluno</a> |
+                <a href="alterarAluno.php">Alterar aluno</a> |
+                <a href="excluirAluno.php">Excluir aluno</a> |
+                <a href="listaAluno.html">Listar aluno</a>
+            </nav>
+        </header>
+        <hr>
+
+        <h1>Escolha uma opção de listagem</h1>
+
+        <form action="listaAluno.php" method="GET">
+            <button type="submit" name="opcao" value="todas">Listar todos os alunos</button>
+        </form>
+        <br>
+        <form action="listaAluno.php" method="GET">
+            <label for="nome_aluno">Nome do aluno:</label>
+            <input type="text" name="nome_aluno">
+            <button type="submit" name="opcao" value="um">Listar um aluno</button>
+        </form>
+    </body>
+</html>
