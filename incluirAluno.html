@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Incluir aluno</title>
+        <script>
+            function EnviarAluno() 
+            {
+                let objForm = document.getElementById("formAluno");
+                console.log("objForm: " + objForm.innerHTML);
+
+                let matricula = document.getElementById("matricula").value;
+                let nome = document.getElementById("nome").value;
+                let email = document.getElementById("email").value;
+                console.log("Matricula: " + matricula + " nome: " + nome + " email: " + email);
+
+                let objForm2 = {"matricula": matricula,"nome":nome,"email":email};
+                let objJson = JSON.stringify(objForm);
+                console.log("objForm2: " + objForm2);
+                console.log("JSON: " + objJson);
+    
+                let xmlhttp = new XMLHttpRequest();
+                console.log("1");
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) 
+                    {
+                        console.log("Chegou a resposta OK: " + this.responseText);
+                        console.log("2");
+                        document.getElementById("msg").innerHTML = this.responseText;
+                    } 
+                    else
+                        if (this.readyState < 4) 
+                        {
+                            console.log("3: " + this.readyState);
+                        } 
+                        else
+                            console.log("Requisicao falhou: " + this.status);
+                }
+                console.log("4");
+                xmlhttp.open("GET", "http://localhost/3DAW/exercicio07(intro_JSON)/incluirAluno.html" + matricula +
+                                "&nome=" + nome + "&email=" + email);
+                xmlhttp.send();
+                console.log("form enviado");
+                console.log("5");
+            }
+            function validaForm(pmatricula, pnome, pemail) 
+            {
+                let msg = "";
+                if (pmatricula == "") msg = "matricula não preenchida. <br>";
+    
+                return msg;
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="incluirAluno.html">Incluir aluno</a> |
+                <a href="alterarAluno.html">Alterar aluno</a> |
+                <a href="excluirAluno.html">Excluir aluno</a> |
+                <a href="listaAluno.html">Listar aluno</a>
+            </nav>
+        </header>
+
+        <h1>Incluir novo aluno</h1>
+        <form action="incluirAluno.php" method="GET" id="formAluno">
+                Nome: <input type="text" name="nome" id="nome">
+                <br><br>
+                CPF: <input type="text" name="cpf" id="cpf">
+                <br><br>
+                Matricula: <input type="text" name="matricula" id="matricula">
+                <br><br>
+                Data de Nascimento(DD/MM/AAAA): <input type="text" name="data" id="data">
+                <br><br>
+                <input type="submit" value="Incluir novo aluno">
+        </form>
+
+        <br>
+    </body>
+</html>
