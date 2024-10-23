@@ -6,26 +6,30 @@
         <script>
             function EnviarAluno() 
             {
-                let objForm = document.getElementById("formAluno");
-                console.log("objForm: " + objForm.innerHTML);
+                let formAluno = document.getElementById("formAluno");
+                //console.log("objForm: " + objForm.innerHTML);
 
-                let matricula = document.getElementById("matricula").value;
                 let nome = document.getElementById("nome").value;
-                let email = document.getElementById("email").value;
-                console.log("Matricula: " + matricula + " nome: " + nome + " email: " + email);
+                let cpf = document.getElementById("cpf").value;
+                let matricula = document.getElementById("matricula").value;
+                let data = document.getElementById("data").value;
 
-                let objForm2 = {"matricula": matricula,"nome":nome,"email":email};
-                let objJson = JSON.stringify(objForm);
-                console.log("objForm2: " + objForm2);
-                console.log("JSON: " + objJson);
+                //console.log("Nome: " + nome + " cpf: " + cpf + " matricula: " + matricula + " data de nascimento: " + data);
+
+                let objForm2 = {"nome":nome,"cpf":cpf,"matricula": matricula,"data":data};
+                let objJson = JSON.stringify(formAluno) 
+                let objJson2 = JSON.stringify(objForm2);
+                //console.log("objForm2: " + objForm2);
+                //console.log("JSON: " + objJson);
     
                 let xmlhttp = new XMLHttpRequest();
-                console.log("1");
+                //console.log("1");
+
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) 
                     {
                         console.log("Chegou a resposta OK: " + this.responseText);
-                        console.log("2");
+                        //console.log("2");
                         document.getElementById("msg").innerHTML = this.responseText;
                     } 
                     else
@@ -36,17 +40,16 @@
                         else
                             console.log("Requisicao falhou: " + this.status);
                 }
-                console.log("4");
-                xmlhttp.open("GET", "http://localhost/3DAW/exercicio07(intro_JSON)/incluirAluno.html" + matricula +
-                                "&nome=" + nome + "&email=" + email);
+                //console.log("4");
+                xmlhttp.open("GET", "http://localhost/3DAW/Aula_07(Json)/incluirAluno.html" + "&nome=" + nome + "&cpf=" + cpf + "&matricula" + matricula + "&data" + data);
                 xmlhttp.send();
-                console.log("form enviado");
-                console.log("5");
+                //console.log("form enviado");
+                //console.log("5");
             }
-            function validaForm(pmatricula, pnome, pemail) 
+            function validaForm(pnome, pcpf, pmatricula, pdata) 
             {
                 let msg = "";
-                if (pmatricula == "") msg = "matricula não preenchida. <br>";
+                if (pnome == "") msg = "nome não preenchido. <br>";
     
                 return msg;
             }
@@ -63,7 +66,7 @@
         </header>
 
         <h1>Incluir novo aluno</h1>
-        <form action="incluirAluno.php" method="GET" id="formAluno">
+        <form action="" method="GET" name="formAluno" id="formAluno">
                 Nome: <input type="text" name="nome" id="nome">
                 <br><br>
                 CPF: <input type="text" name="cpf" id="cpf">
@@ -72,7 +75,7 @@
                 <br><br>
                 Data de Nascimento(DD/MM/AAAA): <input type="text" name="data" id="data">
                 <br><br>
-                <input type="submit" value="Incluir novo aluno">
+                <input type="submit" value="Incluir novo aluno" onclick="EnviarAluno();">
         </form>
 
         <br>
