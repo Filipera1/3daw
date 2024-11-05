@@ -11,7 +11,7 @@
                 let matricula = document.getElementById("matricula").value;
                 let email = document.getElementById("email").value;
                 
-                let objForm2 = {"nome": nome,"matricula": matricula,"email": email};
+                let objForm2 = {"nome":nome,"matricula":matricula,"email":email};
                 let objJson = JSON.stringify(formAluno) 
                 let objJson2 = JSON.stringify(objForm2);
                 //console.log("objForm2: " + objForm2);
@@ -36,7 +36,7 @@
                             console.log("Requisicao falhou: " + this.status);
                 }
                 //console.log("4");
-                xmlhttp.open("GET", "http://localhost/3DAW/Aula_07(Json)/incluirAluno.html?nome=" + nome + "&matricula" + matricula + "&email" + email);
+                xmlhttp.open("GET", "http://localhost/3DAW/Aula_07(Json)/incluirAluno.php?nome=" + nome + "&matricula=" + matricula + "&email=" + email);
                 xmlhttp.send();
                 //console.log("form enviado");
                 //console.log("5");
