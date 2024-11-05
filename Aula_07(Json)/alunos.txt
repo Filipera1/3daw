@@ -1,0 +1,3 @@
+nome;matricula;email;
+Exemplo de Exemplo;5678;exemplo@gmail.com
+2Exemplo de Exemplo;1234;2exemplo@gmail.com
