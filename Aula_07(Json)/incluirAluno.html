@@ -7,16 +7,11 @@
             function EnviarAluno() 
             {
                 let formAluno = document.getElementById("formAluno");
-                //console.log("objForm: " + objForm.innerHTML);
-
-                let nome = document.getElementById("nome").value;
-                let cpf = document.getElementById("cpf").value;
+                let nome = document.getElementById("nome").value; 
                 let matricula = document.getElementById("matricula").value;
-                let data = document.getElementById("data").value;
-
-                //console.log("Nome: " + nome + " cpf: " + cpf + " matricula: " + matricula + " data de nascimento: " + data);
-
-                let objForm2 = {"nome":nome,"cpf":cpf,"matricula": matricula,"data":data};
+                let email = document.getElementById("email").value;
+                
+                let objForm2 = {"nome": nome,"matricula": matricula,"email": email};
                 let objJson = JSON.stringify(formAluno) 
                 let objJson2 = JSON.stringify(objForm2);
                 //console.log("objForm2: " + objForm2);
@@ -41,17 +36,10 @@
                             console.log("Requisicao falhou: " + this.status);
                 }
                 //console.log("4");
-                xmlhttp.open("GET", "http://localhost/3DAW/Aula_07(Json)/incluirAluno.html" + "&nome=" + nome + "&cpf=" + cpf + "&matricula" + matricula + "&data" + data);
+                xmlhttp.open("GET", "http://localhost/3DAW/Aula_07(Json)/incluirAluno.html?nome=" + "&nome=" + nome + "&matricula" + matricula + "&email" + email);
                 xmlhttp.send();
                 //console.log("form enviado");
                 //console.log("5");
-            }
-            function validaForm(pnome, pcpf, pmatricula, pdata) 
-            {
-                let msg = "";
-                if (pnome == "") msg = "nome não preenchido. <br>";
-    
-                return msg;
             }
         </script>
     </head>
@@ -69,11 +57,9 @@
         <form action="" method="GET" name="formAluno" id="formAluno">
                 Nome: <input type="text" name="nome" id="nome">
                 <br><br>
-                CPF: <input type="text" name="cpf" id="cpf">
-                <br><br>
                 Matricula: <input type="text" name="matricula" id="matricula">
                 <br><br>
-                Data de Nascimento(DD/MM/AAAA): <input type="text" name="data" id="data">
+                Email: <input type="text" name="email" id="email">
                 <br><br>
                 <input type="submit" value="Incluir novo aluno" onclick="EnviarAluno();">
         </form>
