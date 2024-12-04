@@ -30,6 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Incluir Aluno</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="incluirAluno.php">Incluir aluno</a> |
+            <a href="alterarAluno.php">Alterar aluno</a> |
+            <a href="excluirAluno.php">Excluir aluno</a> |
+            <a href="listaAluno.html">Listar aluno</a>
+        </nav>
+    </header>
     <h1>Incluir Aluno</h1>
     <form method="POST">
         Nome: <input type="text" name="nome" required><br>
