@@ -22,6 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Excluir Aluno</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="incluirAluno.php">Incluir aluno</a> |
+            <a href="alterarAluno.php">Alterar aluno</a> |
+            <a href="excluirAluno.php">Excluir aluno</a> |
+            <a href="listaAluno.html">Listar aluno</a>
+        </nav>
+    </header>
     <h1>Excluir Aluno</h1>
     <form method="POST">
         ID do Aluno: <input type="number" name="id" required><br>
