@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro de Cliente</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h3>Cadastro de Cliente</h3>
+    <form id="cadastro" method="POST" onsubmit="ValidaForm(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <br><br>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="Apenas números">
+        <br><br>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+        <br><br>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" placeholder="12345-678">
+        <br><br>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade">
+        <br><br>
+        <label for="uf">UF:</label>
+        <select id="uf" name="uf">
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="SP">São Paulo</option>
+            <option value="BA">Bahia</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PE">Pernambuco</option>
+            <option value="RS">Rio Grande do Sul</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Criar Novo Cliente">
+        <br><br>
+        <p id="msgErro" style="color: red;"></p>
+    </form>
+</body>
+</html>
