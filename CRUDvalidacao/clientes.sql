@@ -1,0 +1,9 @@
+CREATE TABLE cliente (
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    cpf CHAR(11) NOT NULL UNIQUE PRIMARY KEY,
+    endereco VARCHAR(200) NOT NULL,
+    cep CHAR(9) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    uf CHAR(2) NOT NULL,
+);
